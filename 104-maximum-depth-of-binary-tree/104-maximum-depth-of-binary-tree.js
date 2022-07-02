@@ -16,8 +16,7 @@ var maxDepth = function(root) {
         if (node === null) {
             return 0;
         } 
-            return Math.max(innerSearch(node.left), innerSearch(node.right)) + 1;  
-        
+            return Math.max(innerSearch(node.left), innerSearch(node.right)) + 1;     
     }
 
     return innerSearch(root);
