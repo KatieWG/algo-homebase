@@ -3,21 +3,29 @@
  * @return {number}
  */
 var missingNumber = function(nums) {
-    const range = nums.length; //3
+    let range = nums.length;
     let exists = true;
     let missingNumber;
     
+    // while (exists) {
+    //     for (let i = 0; i < nums.length + 1; i++) {
+    //             if (!nums.includes(i)) {
+    //                 missingNumber = i;
+    //                 exists = false;
+    //             }
+    //     }
+    // }
+    
+    //while exists...
+        //check to see if nums includes range... if not,
+            //return range
     
     while (exists) {
-        for (let i = 0; i < nums.length + 1; i++) {
-                if (!nums.includes(i)) {
-                    missingNumber = i;
-                    exists = false;
-                }
+        if (!nums.includes(range)) {
+            return range;
         }
+        range--;
     }
-    
-    return missingNumber;
 };
 
 /* 
