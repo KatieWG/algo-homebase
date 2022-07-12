@@ -13,7 +13,7 @@ var twoSum = function(nums, target) {
   //     }
   // }
     
-    //OPTIMIZED SOLUTION
+    //OPTIMIZED SOLUTION*
     //make a map 
     //iterate over nums 
         //set opposite to target - currentChar
