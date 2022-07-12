@@ -3,11 +3,11 @@
  * @return {number}
  */
 var missingNumber = function(nums) {
-    let range = nums.length;
-    let exists = true;
+    const range = nums.length;
+    // let exists = true;
     let missingNumber;
     
-    // while (exists) {
+    //1. while (exists) {
     //     for (let i = 0; i < nums.length + 1; i++) {
     //             if (!nums.includes(i)) {
     //                 missingNumber = i;
@@ -16,17 +16,43 @@ var missingNumber = function(nums) {
     //     }
     // }
     
-    //while exists...
+    //2. while exists...
         //check to see if nums includes range... if not,
             //return range
     
-    while (exists) {
-        if (!nums.includes(range)) {
-            return range;
-        }
-        range--;
+    // while (exists) {
+    //     if (!nums.includes(range)) {
+    //         return range;
+    //     }
+    //     range--;
+    // }
+    
+
+    nums.sort(function(a, b) {
+        return a - b;
+    });
+    
+    //if last index is n ...
+    if (nums[range - 1] !== range) {
+        return range;
     }
+    
+    //if first index is 0...
+     else if (nums[0] !== 0) {
+        return 0;
+    }
+    
+    for (let i = 1; i < nums.length + 1; i++) { 0
+        if (i !== nums[i]) {
+            return i;
+        }
+    }
+    
+    return -1;
+    
 };
+
+console.log(missingNumber([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16]))
 
 /* 
 
