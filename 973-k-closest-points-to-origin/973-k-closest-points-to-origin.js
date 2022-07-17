@@ -3,14 +3,19 @@
  * @param {number} k
  * @return {number[][]}
  */
+
 var kClosest = function(points, k) {
-    const sortedDistances = points.sort((a, b) => getDistance(a) - getDistance(b));
-    return sortedDistances.slice(0, k);
+    return points.sort((a, b) => getDistance(a) - getDistance(b)).slice(0, k);
 };
 
 const getDistance = function([a, b]) {
     return Math.sqrt((a * a) + (b * b));
 }
+
+
+ // var kClosest = function(points, k) {
+ //    return points.sort((a,b) => (a[0]*a[0] + a[1]*a[1]) - (b[0]*b[0] + b[1]*b[1])).slice(0, k);
+ // };
 
 /* 
 PLANNING --> 
